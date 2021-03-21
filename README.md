@@ -12,11 +12,11 @@
 
 **빌드 도구**
 
-- Gradle
+- Gradle 6.8.3
 
 **프레임워크**
 
-- Spring Boot 2.3.9
+- Spring Boot 2.4.4
 
 **언어**
 
@@ -25,3 +25,8 @@
 **패키지 포맷**
 
 - jar
+
+**IDE**
+
+- IntelliJ IDEA
+
