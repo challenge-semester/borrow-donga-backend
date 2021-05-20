@@ -32,4 +32,5 @@
 
 ## Entity 분석
 
-![도전학기제-domain](https://user-images.githubusercontent.com/52629158/117973774-c00ccd80-b367-11eb-90bd-78ee5d681747.png)
+![도전학기제-domain](https://user-images.githubusercontent.com/52629158/118964213-3a5dd300-b9a2-11eb-9beb-a7b75c9dbb2b.png)
+
