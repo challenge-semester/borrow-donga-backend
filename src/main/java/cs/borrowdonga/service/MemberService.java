@@ -2,6 +2,7 @@ package cs.borrowdonga.service;
 
 import cs.borrowdonga.domain.member.Member;
 import cs.borrowdonga.domain.member.MemberRepository;
+import cs.borrowdonga.dto.member.DeleteRequestDto;
 import cs.borrowdonga.dto.member.JoinRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,9 @@ public class MemberService {
         return savedMember.getId();
     }
 
-
+    @Transactional
+    public void delete(DeleteRequestDto requestDto) {
+        Member member = memberRepository.findMemberByStudentNumber(requestDto.getStudentNumber());
+        memberRepository.delete(member);
+    }
 }

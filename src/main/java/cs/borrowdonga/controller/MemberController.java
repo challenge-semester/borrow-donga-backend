@@ -1,6 +1,7 @@
 package cs.borrowdonga.controller;
 
 import cs.borrowdonga.domain.member.Member;
+import cs.borrowdonga.dto.member.DeleteRequestDto;
 import cs.borrowdonga.dto.member.JoinRequestDto;
 import cs.borrowdonga.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,14 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/join")
-    public ResponseEntity<String> join(@Valid @RequestBody JoinRequestDto requestDto) {
+    public ResponseEntity<Void> join(@Valid @RequestBody JoinRequestDto requestDto) {
         memberService.join(requestDto);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<Void> delete(@Valid @RequestBody DeleteRequestDto requestDto) {
+        memberService.delete(requestDto);
         return ResponseEntity.ok().build();
     }
 }
