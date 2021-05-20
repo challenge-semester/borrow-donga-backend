@@ -4,6 +4,7 @@ import cs.borrowdonga.domain.BaseTimeEntity;
 import cs.borrowdonga.domain.comment.Comment;
 import cs.borrowdonga.domain.favorite.Favorite;
 import cs.borrowdonga.domain.post.Post;
+import cs.borrowdonga.dto.member.JoinRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -38,4 +39,13 @@ public class Member extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "member")
     private List<Comment> comments = new ArrayList<>();
+
+    public static Member createMember(JoinRequestDto requestDto) {
+        Member member = new Member();
+        member.name = requestDto.getName();
+        member.department = requestDto.getDepartment();
+        member.studentNumber = requestDto.getStudentNumber();
+        member.role = MemberRole.USER;
+        return member;
+    }
 }
