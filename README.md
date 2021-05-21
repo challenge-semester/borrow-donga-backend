@@ -32,4 +32,8 @@
 
 ## Entity 분석
 
-![도전학기제-domain](https://user-images.githubusercontent.com/52629158/117973774-c00ccd80-b367-11eb-90bd-78ee5d681747.png)
+![도전학기제-domain](https://user-images.githubusercontent.com/52629158/119122609-a6573e80-ba69-11eb-82d4-0f998c2e7038.png)
+
+## 개발 과정
+
+Notion 플랫폼을 활용하고 있으며, [여기](https://www.notion.so/741a119a1512400ebbea9dbc46de9018) 에서 확인할 수 있습니다!
