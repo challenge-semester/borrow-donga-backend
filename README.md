@@ -32,7 +32,7 @@
 
 ## Entity 분석
 
-![도전학기제-domain](https://user-images.githubusercontent.com/52629158/119063021-138bb500-ba13-11eb-9076-567500725992.png)
+![도전학기제-domain](https://user-images.githubusercontent.com/52629158/119122609-a6573e80-ba69-11eb-82d4-0f998c2e7038.png)
 
 ## 개발 과정
 
