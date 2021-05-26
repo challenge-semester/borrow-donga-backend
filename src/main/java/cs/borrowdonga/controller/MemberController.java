@@ -1,6 +1,5 @@
 package cs.borrowdonga.controller;
 
-import cs.borrowdonga.domain.member.Member;
 import cs.borrowdonga.dto.member.DeleteRequestDto;
 import cs.borrowdonga.dto.member.JoinRequestDto;
 import cs.borrowdonga.service.MemberService;
@@ -19,9 +18,9 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/join")
-    public ResponseEntity<Void> join(@Valid @RequestBody JoinRequestDto requestDto) {
-        memberService.join(requestDto);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Long> join(@Valid @RequestBody JoinRequestDto requestDto) {
+        Long newMemberId = memberService.join(requestDto);
+        return ResponseEntity.ok(newMemberId);
     }
 
     @DeleteMapping("/delete")
