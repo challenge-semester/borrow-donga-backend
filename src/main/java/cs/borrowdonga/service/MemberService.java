@@ -20,7 +20,7 @@ public class MemberService {
      */
     @Transactional
     public Long join(JoinRequestDto requestDto) {
-        Member member = Member.createMember(requestDto);
+        Member member = requestDto.toEntity();
         Member savedMember = memberRepository.save(member);
         return savedMember.getId();
     }
