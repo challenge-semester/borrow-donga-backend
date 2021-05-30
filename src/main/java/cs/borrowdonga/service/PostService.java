@@ -1,5 +1,6 @@
 package cs.borrowdonga.service;
 
+import cs.borrowdonga.domain.comment.Comment;
 import cs.borrowdonga.domain.member.Member;
 import cs.borrowdonga.domain.member.MemberRepository;
 import cs.borrowdonga.domain.post.Post;
@@ -7,6 +8,7 @@ import cs.borrowdonga.domain.post.PostRepository;
 import cs.borrowdonga.dto.post.PostCreateRequestDto;
 import cs.borrowdonga.dto.post.PostResponseDto;
 import cs.borrowdonga.dto.post.PostUpdateRequestDto;
+import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,8 @@ public class PostService {
 
     private final PostRepository postRepository;
     private final MemberRepository memberRepository;
+
+    private final CommentService commentService;
 
     /**
      * 게시글 등록(생성)
@@ -41,6 +45,7 @@ public class PostService {
             .findById(postId)
             .orElseThrow(IllegalArgumentException::new);
         post.increaseHits();
+        List<Comment> comments = commentService.readAll(postId);
         return new PostResponseDto(post);
     }
 
