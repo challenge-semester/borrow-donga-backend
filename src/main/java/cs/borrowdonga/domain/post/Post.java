@@ -56,4 +56,8 @@ public class Post extends BaseTimeEntity {
         this.imageUrl = requestDto.getImageUrl();
         return this.id;
     }
+
+    public void increaseHits() {
+        this.hits++;
+    }
 }

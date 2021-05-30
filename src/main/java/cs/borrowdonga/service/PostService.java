@@ -35,9 +35,13 @@ public class PostService {
     /**
      * 게시글 조회
      */
+    @Transactional
     public PostResponseDto read(Long postId) {
-        Optional<Post> optionalPost = postRepository.findById(postId);
-        return new PostResponseDto(optionalPost.orElseThrow(IllegalArgumentException::new));
+        Post post = postRepository
+            .findById(postId)
+            .orElseThrow(IllegalArgumentException::new);
+        post.increaseHits();
+        return new PostResponseDto(post);
     }
 
     /**
@@ -45,7 +49,9 @@ public class PostService {
      */
     @Transactional
     public Long update(Long postId, PostUpdateRequestDto requestDto) {
-        Post originPost = postRepository.findById(postId).orElseThrow(IllegalArgumentException::new);
+        Post originPost = postRepository
+            .findById(postId)
+            .orElseThrow(IllegalArgumentException::new);
         return originPost.update(requestDto);
     }
 
@@ -55,6 +61,7 @@ public class PostService {
     @Transactional
     public void delete(Long postId) {
         Optional<Post> optionalPost = postRepository.findById(postId);
-        postRepository.delete(optionalPost.orElseThrow(IllegalArgumentException::new));
+        postRepository
+            .delete(optionalPost.orElseThrow(IllegalArgumentException::new));
     }
 }
