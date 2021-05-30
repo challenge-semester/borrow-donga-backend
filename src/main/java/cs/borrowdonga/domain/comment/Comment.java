@@ -20,7 +20,7 @@ public class Comment extends BaseTimeEntity {
     @Column(name = "comment_id")
     private Long id;
 
-    @Lob
+//    @Lob
     private String content;
 
     private Long likes;
