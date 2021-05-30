@@ -1,5 +1,8 @@
 package cs.borrowdonga.domain.post;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import cs.borrowdonga.domain.BaseTimeEntity;
 import cs.borrowdonga.domain.comment.Comment;
 import cs.borrowdonga.domain.member.Member;
@@ -14,6 +17,7 @@ import java.util.List;
 
 import static javax.persistence.FetchType.*;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
 @Getter
 @NoArgsConstructor
 @Entity
